@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+/* Reseta as margens, preenchimentos e outras propriedades de estilo para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif; /* Define a fonte padrão */
+}
+
+/* Ajusta a base de tamanho de fonte para 62.5% (1rem = 10px) para facilitar cálculos */
+html {
+    font-size: 62.5%;
+}
+
+/* Estiliza o corpo da página */
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+    background-color: black;
+    color: rgb(255, 255, 255); /* Define a cor do texto */
+}
+
+/* Configurações de estilo para o cabeçalho */
+header {
+    margin-top: 20px;
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px); /* Adiciona uma sombra */
+    display: flex;
+    justify-content: space-between; /* Espaça elementos lateralmente */
+    align-items: center;
+    z-index: 100; /* Coloca o cabeçalho acima de outros elementos */
+}
+
+/* Estilo do logo no cabeçalho */
+.logo {
+    font-size: 3rem;
+    color: #fc5203;
+    font-weight: 800;
+    cursor: pointer; /* Aponta que é clicável */
+    transition: 0.5s ease; /* Suaviza as transições */
+}
+
+/* Efeito de escala no logo ao passar o mouse */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Links do menu de navegação */
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent; /* Para animação de borda ao passar o mouse */
+}
+
+/* Efeito para links ativos ou em hover */
+nav a:hover,
+nav a.active {
+    color: #e25311;
+    border-bottom: 3px solid #dd8717;
+}
+
+/* Estilos para telas menores (até 995px) */
+@media (max-width: 995px) {
+    nav {
+        position: absolute;
+        display: none; /* Menu escondido */
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #ff4800;
+        border-bottom: 3px solid #ff6601;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    /* Exibe o menu quando ativo */
+    nav.active {
+        display: block;
+    }
+
+    /* Configura os links do menu em dispositivos menores */
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    /* Estilos de hover e ativos para links em telas menores */
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #ff3c00;
+    }
+}
+
+/* Define um espaçamento mínimo para seções */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Estilização da seção "home" */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+/* Estilos para o título principal dentro da home */
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Estilo para spans coloridos */
+span {
+    color: #f85d03;
+}
+
+/* Estilização do subtítulo */
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Estilização do parágrafo de texto */
+.home-content p {
+    font-size: 1.6rem;
+}
+
+/* Define bordas arredondadas na imagem principal */
+.home-img {
+    border-radius: 50%;
+}
+
+/* Estilização da imagem principal na home */
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #f35e08; /* Sombra na imagem */
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+/* Estilo no hover da imagem */
+.home-img img:hover {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Ícones de redes sociais */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #ff5100;
+    font-size: 2rem;
+    border-radius: 50%; /* Ícones arredondados */
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #f86503;
+}
+
+/* Efeito ao passar o mouse nos ícones */
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #f04d0d;
+    box-shadow: 0 0 25px #e65f06;
+}
+
+/* Estilo para botões */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #d45419;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #ec5915;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito de hover no botão */
+.btn:hover {
+    transform: scale3d(1.03);
+    background-color: #e65e0f;
+    color: black;
+    box-shadow: 0 0 25px #db6809;
+}
+
+/* Estilos para o texto com animação de digitação */
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+/* Definições de posição para span de animação */
+.typing-text span {
+    position: relative;
+}
+
+/* Configura animação de texto alternante */
+.typing-text span::before {
+    content: "";
+    color: #f17713;
+    animation: words 20s infinite;
+}
+
+/* Animação de cursor no texto */
+.typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+/* Animação do cursor */
+@keyframes cursor {
+    to {
+        border-left: 3px solid #ecb80c;
+    }
+}
+
+/* Animação de palavras alternantes */
+@keyframes words {
+    0%, 20% {
+        content: "Eterno Aprendiz";
+    }
+    21%, 40% {
+        content: "Aspirante em T.I";
+    }
+    41%, 60% {
+        content: "Aprendiz em Web Design";
+    }
+    61%, 80% {
+        content: "Estudante";
+    }
+}
+
+/* Responsivo para telas menores que 1000px */
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+/* Responsivo para telas menores que 995px */
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
